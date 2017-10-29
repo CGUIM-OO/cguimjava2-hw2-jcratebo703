@@ -72,6 +72,14 @@ class Deck{
 	public Deck(int nDeck){
 		cards=new ArrayList<Card>();
 		//1 Deck have 52 cards, https://en.wikipedia.org/wiki/Poker
+		for(int n = nDeck; n > 0;n--) {
+			for(int rank = 1;rank <= 13;rank++) {
+				for(int suit = 1; suit <= 4; suit++) {
+					Card card = new Card(suit,rank);
+					cards.add(card);
+				}
+			}
+		}
 		//Hint: Use new Card(x,y) and 3 for loops to add card into deck
 		//Sample code start
 		//Card card=new Card(1,1); ->means new card as clubs ace
@@ -83,6 +91,9 @@ class Deck{
 	public void printDeck(){
 		//Hint: print all items in ArrayList<Card> cards, 
 		//TODO: please implement and reuse printCard method in Card class (5 points)
+		for(int n = 0;n < cards.size(); n++) {
+			cards.get(n).printCard();
+		}
 
 	}
 	public ArrayList<Card> getAllCards(){
